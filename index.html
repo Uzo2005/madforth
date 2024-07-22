@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+
+    <title>MadForth Demo</title>
+  </head>
+  <body>
+    <header
+      class="h-[10vh] w-full bg-madforth_black border-b-4 border-b-white font-atkinson px-5 flex items-center justify-between"
+    >
+      <div class="pt-1 w-fit h-[90%] flex flex-col justify-center items-center">
+        <img src="/logo.png" alt="madforth_logo" class="size-16" />
+        <p class="font-semibold text-[10px] text-madforth_yellow">madforth</p>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <p class="text-madforth_yellow font-bold">MADFORTH</p>
+        <p class="text-sm font-semibold italic text-madforth_red">
+          a stack visual programming language
+        </p>
+      </div>
+    </header>
+    <main
+      id="root"
+      class="h-[85vh] font-atkinson bg-madforth_black"
+    ></main>
+    <footer
+      class="h-[5vh] w-full border-t-4 border-b-white bg-madforth_black font-atkinson text-white text-opacity-70 text-sm flex justify-end items-center px-5"
+    >
+      made by<span class="mx-2 text-madforth_yellow">cletus igwe</span
+      ><span class="mr-2 text-white text-opacity-20">|</span>
+      2024
+    </footer>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

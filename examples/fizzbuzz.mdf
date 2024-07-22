@@ -1,0 +1,1 @@
+TAKE $start TAKE $end start[] $index TRUE WHILE (index[] end[] = IF (BREAK) ELSE (index[] 3 % 0 = IF ("fizz" ECHO index[] ECHO "--" ECHO) index[] 5 % 0 = IF ("buzz" ECHO index[] ECHO "--" ECHO)) 1 index[] + $index)
