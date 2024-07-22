@@ -8,7 +8,7 @@ const Stdin = ({ state }: Props) => {
       <p className="flex justify-center text-sm text-white italic w-full">
         standard input
       </p>
-      <div>
+      <div className="overflow-y-scroll">
         {state.length > 0
           ? state.map((item, index) => (
               <p

@@ -12,7 +12,7 @@ const IOBox = ({ ioState }: Props) => {
         <p className="flex justify-center text-sm text-white italic w-full">
           standard output
         </p>
-        <div>
+        <div className="overflow-y-scroll">
           {ioState.stdout.length > 0
             ? ioState.stdout.map((item, index) => (
                 <p
@@ -29,7 +29,7 @@ const IOBox = ({ ioState }: Props) => {
         <p className="flex justify-center text-sm text-white italic w-full">
           standard error
         </p>
-        <div>
+        <div className="overflow-y-scroll">
           {ioState.stderr.length > 0
             ? ioState.stderr.map((item, index) => (
                 <p
