@@ -265,9 +265,7 @@ function interpret(tokens: Token[]): Token[] {
                     if (conditional.value == "TRUE") {
                       let loopIndex = 0;
                       while (true) {
-                        interpret(
-                          tokenize(whileStmtBody.value)
-                        );
+                        interpret(tokenize(whileStmtBody.value));
                         if (breakLoopCount > 0) {
                           breakLoopCount--;
                           break;
@@ -401,7 +399,6 @@ function interpret(tokens: Token[]): Token[] {
 
 function evaluate(command: Token, stack: Token[]): Token[] {
   const operation = command.value;
-
   let result = [...stack];
 
   if (
@@ -415,6 +412,7 @@ function evaluate(command: Token, stack: Token[]): Token[] {
     io.stderr.push(err);
     return result;
   }
+  
   let a, b, c;
 
   function str2Bool(str: string): boolean | undefined {
@@ -646,6 +644,10 @@ export function compile(input: string): StackResult {
   result.io = io;
   console.log(io);
   return result;
+}
+
+export function pushToStdin(value: string) {
+  io.stdin.push(value);
 }
 
 // io.stdin.push("20");

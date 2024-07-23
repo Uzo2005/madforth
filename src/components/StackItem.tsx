@@ -1,10 +1,5 @@
-import React from "react";
 import { useDrag, useDrop } from "react-dnd";
-
-export const ItemTypes = {
-  STACK_ITEM: "stack_item",
-  MADFORTH_KEYWORD: "Madforth_keyword",
-};
+import { ItemTypes } from "../consts";
 
 export interface DragItem {
   index: number;
@@ -12,7 +7,7 @@ export interface DragItem {
   type: string;
 }
 
-interface StackItemProps {
+interface Props {
   id: string;
   text: string;
   index: number;
@@ -20,13 +15,7 @@ interface StackItemProps {
   removeItem: (index: number) => void;
 }
 
-const StackItem: React.FC<StackItemProps> = ({
-  id,
-  text,
-  index,
-  moveItem,
-  removeItem,
-}) => {
+const StackItem = ({ id, text, index, moveItem, removeItem }: Props) => {
   const [{ isDragging }, drag] = useDrag(() => ({
     type: ItemTypes.STACK_ITEM,
     item: { type: ItemTypes.STACK_ITEM, id, index },
@@ -66,7 +55,7 @@ const StackItem: React.FC<StackItemProps> = ({
   return (
     <div
       ref={(node) => drag(drop(node))}
-      className={`border-2 border-madforth_yellow h-10 my-3 font-bold text-xl text-white flex justify-center items-center cursor-move ${
+      className={` bg-black h-12 mb-1 font-bold text-xl text-white flex justify-center items-center cursor-move ${
         isDragging ? "opacity-50" : "opacity-100"
       }`}
     >

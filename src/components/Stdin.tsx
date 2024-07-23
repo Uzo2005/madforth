@@ -1,19 +1,19 @@
 interface Props {
-  state: string[];
+  values: string[];
 }
 
-const Stdin = ({ state }: Props) => {
+const Stdin = ({ values }: Props) => {
   return (
-    <div className="bg-gray-700">
+    <div className="bg-black">
       <p className="flex justify-center text-sm text-white italic w-full">
         standard input
       </p>
-      <div className="overflow-y-scroll">
-        {state.length > 0
-          ? state.map((item, index) => (
+      <div className="overflow-y-scroll p-3">
+        {values.length > 0
+          ? values.map((item, index) => (
               <p
                 key={index}
-                className="mb-1 text-madforth_yellow underline mx-2"
+                className="mb-1 bg-madforth_yellow text-black w-20 mx-auto flex justify-center"
               >
                 {item}
               </p>

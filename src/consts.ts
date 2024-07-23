@@ -1,0 +1,5 @@
+export const ItemTypes = {
+  STACK_ITEM: "STACK_ITEM",
+  MADFORTH_KEYWORD: "KEYWORD",
+  MADFORTH_VARIABLE: "VARIABLE",
+};

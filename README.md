@@ -1,30 +1,117 @@
-# React + TypeScript + Vite
+# MadForth Programming Language
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MadForth is an experimental stack-based programming language inspired by Forth. It provides operators for arithmetic, comparison, logic, and control flow, as well as basic input/output operations.
 
-Currently, two official plugins are available:
+## Language Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Data Types
 
-## Expanding the ESLint configuration
+- Numbers
+- Strings
+- Booleans
+- Identifiers (variables)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Operators
 
-- Configure the top-level `parserOptions` property like this:
+#### Arithmetic
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+- `+` (addition)
+- `-` (subtraction)
+- `*` (multiplication)
+- `/` (division)
+- `%` (modulus)
+- `**` (power)
+
+#### Comparison
+
+- `=` (equal to)
+- `!=` (not equal to)
+- `<` (less than)
+- `>` (greater than)
+- `<=` (less than or equal to)
+- `>=` (greater than or equal to)
+
+#### Logic
+
+- `&` (and)
+- `||` (or)
+- `!` (not)
+
+### Control Flow
+
+- `IF` ... `ELSE` ... (conditional execution)
+- `WHILE` ... (loop while condition is true)
+- `REPEAT` ... (loop n times)
+- `BREAK` (exit a loop)
+
+### Stack Operations
+
+- `POP` (remove top item from stack)
+- `DUP` (duplicate top item on stack)
+- `SWAP` (swap top two items on stack)
+
+### Input/Output
+
+- `ECHO` (output to stdout)
+- `TAKE` (input from stdin)
+
+### Grouping
+
+Use parentheses `(` and `)` to group expressions and scope branching.
+
+## Example Programs
+
+Here are a few example programs to help you get started with MadForth:
+
+1. Hello, World!
+
+```
+"Hello, World!" ECHO
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Simple addition
+
+```
+5 3 + ECHO
+```
+
+3. Conditional statement
+
+```
+10 5 > IF
+    ("10 is greater than 5" ECHO)
+ELSE
+  ("10 is not greater than 5" ECHO)
+```
+
+4. Loop
+
+```
+TRUE WHILE (
+  "infinite loop" ECHO
+)
+```
+
+5. Variable Assignment and Use (assigments start with `$`, dereferences end with `[]`)
+
+```
+1 3 + $i i[] ECHO
+```
+
+6. Read From Stdin
+
+```
+TAKE 3 + ECHO
+```
+
+7. Fizzbuzz
+
+```
+TAKE $start TAKE $end start[] $index TRUE WHILE (index[] end[] = IF (BREAK) ELSE (index[] 3 % 0 = IF ("fizz" ECHO) index[] 5 % 0 = IF ("buzz" ECHO)) 1 index[] + $index)
+```
+
+## Getting Started
+
+To use MadForth, visit the [online demo where I tried to turn it into a visual language](https://uzo2005.github.io/madforth), forgive me for the horrible UI!
+
+Use MadForth At Your Own Peril!
