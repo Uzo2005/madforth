@@ -7,7 +7,6 @@ interface Props {
 }
 
 const IoBox = ({ io, variableLookupTable }: Props) => {
-  console.log(io);
   return (
     <div className="col-span-2 row-span-1 bg-madforth_black shadow-lg rounded-md grid grid-cols-4 gap-2">
       <Stdin values={io.stdin} />

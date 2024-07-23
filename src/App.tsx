@@ -12,7 +12,6 @@ const App = () => {
   });
   const [stack, setStack] = useState<string[]>([]);
   const [programText, setProgramText] = useState("");
-  console.log(stack);
 
   const updateStack = (updater: (prevStack: string[]) => string[]) => {
     setStack((prevStack) => {

@@ -1,4 +1,3 @@
-import React from "react";
 import { Token } from "../../types";
 
 interface Props {
@@ -6,7 +5,6 @@ interface Props {
 }
 
 const VariableStates = ({ variableLookupTable }: Props) => {
-  console.log(variableLookupTable);
   return (
     <div className="bg-black p-4">
       <p className="flex text-center justify-center text-xs text-white italic w-full mb-2">
